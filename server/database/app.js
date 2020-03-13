@@ -9,13 +9,13 @@ const connection = new Sequelize('etsy', 'root', 'mikamaus', {
   }
 });
 
-// connection.authenticate((err) => {
-//     if (err) {
-//       console.log('got an error', err)
-//     } else {
-//       console.log('db connected')
-//     }
-// });
+connection
+  .authenticate()
+  .then(function(err) {
+    console.log('Connection has been established successfully.');
+  }, function (err) {
+    console.log('Unable to connect to the database:', err);
+  });
 
 const Shop = connection.define('shops', {
   shop_name: {
@@ -23,22 +23,25 @@ const Shop = connection.define('shops', {
     unique: true,
     allowNull: false
   },
-  owner_name: {
-    type: Sequelize.STRING,
-    allowNull: false
-  }
+  owner_name: Sequelize.STRING,
+  established: Sequelize.INTEGER,
+  location: Sequelize.STRING,
+  shop_icon: Sequelize.STRING,
+  sales: Sequelize.INTEGER
 });
-
-let name = faker.name.findName();
-let companyName = faker.company.companyName();
 
 
 connection.sync( {force: true})
 .then(function() {
-  Shop.create({
-    shop_name: name,
-    owner_name: companyName
-  })
-});
+  for (var i = 0; i <= 10; i++) {
+    Shop.create({
+      shop_name: faker.name.findName(),
+      owner_name: faker.company.companyName(),
+      established: faker.random.number({min: 2005, max: 2020}),
+      location: faker.address.state(),
+      // shop_icon: Sequelize.STRING,
+      sales: faker.random.number(400)
+    })
+  }
 
-// module.exports = Shop
+});
