@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "webpack --mode development",
-    "db:setup": "node ./server/database/app.js"
+    "db:setup": "node ./server/database/seed.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",

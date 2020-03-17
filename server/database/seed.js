@@ -25,9 +25,6 @@ const connection = new Sequelize('etsymary', 'root', 'mikamaus', {
   }
 });
 
-
-
-
 connection
   .authenticate()
   .then(function(err) {
@@ -49,44 +46,42 @@ const Shop = connection.define('shops', {
 
 const Product = connection.define('products', {
   product_name: Sequelize.STRING,
-  product_price: Sequelize.INTEGER
+  product_price: Sequelize.INTEGER,
+  product_image: Sequelize.STRING
 });
 
-const Image = connection.define('images', {
-  url: Sequelize.STRING
-})
-
+//establishes relationships between tables
 Shop.hasMany(Product);
 Product.belongsTo(Shop);
 
-Product.hasMany(Image);
-Image.belongsTo(Product);
-
-
 connection.sync({force: true})
 .then(function() {
+  //creates 10 shops
   for (var s = 0; s < 10; s++) {
     Shop.create({
       shop_name: faker.company.companyName(),
       established: faker.random.number({min: 2005, max: 2020}),
       location: faker.address.state(),
-      shop_icon: `https://etsy-products-images.s3-us-west-2.amazonaws.com/10${s}.jpg`,
+      shop_icon: `https://etsy-products-images.s3-us-west-2.amazonaws.com/20${s}.jpg`,
       sales: faker.random.number(400)
     })
   }
 })
 .then(function() {
-  for (var i = 1; i <= 40; i++) {
-    Image.create({
-      url: `https://etsy-products-images.s3-us-west-2.amazonaws.com/${i}.jpg`
-    })
-  }
-})
-.then(function() {
-  for (var p = 1; p <= 100; p++) {
+  //creates 50 products
+  for (var p = 1; p <= 50; p++) {
     Product.create({
       product_name: faker.commerce.product(),
       product_price: faker.random.number({min: 5, max: 200}),
+      product_image: `https://etsy-products-images.s3-us-west-2.amazonaws.com/${p}.jpg`,
+      shopId: faker.random.number({min:1, max:10})
+    })
+  }
+  for (var p = 1; p <= 50; p++) {
+    Product.create({
+      product_name: faker.commerce.product(),
+      product_price: faker.random.number({min: 5, max: 200}),
+      product_image: `https://etsy-products-images.s3-us-west-2.amazonaws.com/${p}.jpg`,
       shopId: faker.random.number({min:1, max:10})
     })
   }
