@@ -8,8 +8,10 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "build": "webpack --mode development",
-    "db:setup": "node ./server/database/seed.js"
+    "build": "webpack --config webpack.config.js",
+    "watch": "webpack --watch --config webpack.config.js",
+    "db:setup": "node ./server/database/seed.js",
+    "start": "nodemon ./server/server.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
