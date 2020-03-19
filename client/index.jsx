@@ -8,11 +8,10 @@ class MoreFrom extends React.Component {
 
   render () {
     return (
-      <div>Hello</div>
-    )
-
+      <div>This is the MoreFrom Component</div>
+    );
   }
-};
+}
 
 ReactDOM.render(
   <MoreFrom />,
