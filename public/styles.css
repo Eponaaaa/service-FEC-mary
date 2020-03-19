@@ -1,9 +1,36 @@
 /* Content Container */
+#MoreFrom .content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
 
 /* ShopInfo Container */
-#moreFrom #image-placeholder img {
+
+/* #moreFrom .shop-container {
+  width: 250px;
+
+
+} */
+
+#moreFrom #shop-icon-placeholder img {
   height: 150px;
   width: 150px
 }
 
 /* Product Container */
+#moreFrom .products-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+/* #moreFrom .product-card {
+   display: flex;
+  flex-wrap: wrap;
+} */
+
+#moreFrom .product-images img {
+  height: 250px;
+  width: 250px;
+}

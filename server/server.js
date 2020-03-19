@@ -22,7 +22,7 @@ app.get('/listing/:productId', (req, res) => {
       if (err) {
         console.log('error getting shop info', err);
       }
-      return db.query(`SELECT id FROM products WHERE shopid=${shopId[0].shopId}`, (err, otherProducts) => {
+      return db.query(`SELECT * FROM products WHERE shopid=${shopId[0].shopId}`, (err, otherProducts) => {
         if (err) {
           console.log('error getting other products', err);
         }

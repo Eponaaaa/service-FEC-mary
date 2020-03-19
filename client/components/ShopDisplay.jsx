@@ -3,9 +3,9 @@ import React from 'react';
 const ShopDisplay = ({shopInfo}) => {
 
   return (
-    <div>
-      <div className="mf-shop-shop-actions">
-        <div id="image-placeholder">
+    <div className="shop-container">
+      <div className="shop-actions">
+        <div id="shop-icon-placeholder">
           <img src={shopInfo.shopInfo.shopIcon} alt={'https://cdn.shopify.com/s/files/1/1780/8157/products/Monstera_Quartz_1024x1024@2x.jpg?v=1581679323'}></img>
         </div>
         <p className="shop-text-plain">More from</p>

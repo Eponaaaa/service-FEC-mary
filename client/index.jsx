@@ -23,7 +23,6 @@ class MoreFrom extends React.Component {
       url: `/listing/${this.state.currentProduct}`,
       method: 'GET',
       success: (data) => {
-        console.log(data);
         this.setState({
           shopInfo: data.shopInfo[0],
           products: data.otherProducts
@@ -36,17 +35,19 @@ class MoreFrom extends React.Component {
   }
 
   render () {
+    let displayedProducts = this.state.products.slice(0, 8);
     return (
-      <div id="MoreFrom">
+      <div id="moreFrom">
         {/* {console.log('shopinfo', this.state.shopInfo)} */}
-        {console.log('products', this.state.products)}
-        <div className="mf-content-container">
-          <div className="mf-shopInfo-container">
-            <ShopDisplay shopInfo={this.state}/>
-          </div>
-          <div className="mf-products-container">
-            {[1, 1, 1].map((ele, i) => {
-              return <ProductCard key={i}/>;
+        {/* {console.log('products', displayedProducts)} */}
+        <div id="content-container">
+          <ShopDisplay shopInfo={this.state}/>
+          <div className="products-container">
+            {displayedProducts.map((product) => {
+              return <ProductCard
+                key={product.id}
+                product={product}
+              />;
             }
             )}
           </div>
@@ -58,5 +59,5 @@ class MoreFrom extends React.Component {
 
 ReactDOM.render(
   <MoreFrom />,
-  document.getElementById('moreFrom')
+  document.getElementById('app')
 );
