@@ -6,5 +6,14 @@
  */
 
 module.exports = {
-  extends: './node_modules/eslint-config-hackreactor/index.js'
+  env: {
+		es6: true,
+		browser: true,
+		node: true,
+	},
+  extends: ['airbnb', 'plugin:jest/recommended', 'jest-enzyme'],
+	plugins: [
+		'import',
+		'react',
+	]
 };
