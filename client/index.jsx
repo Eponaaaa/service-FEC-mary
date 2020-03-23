@@ -38,18 +38,18 @@ class MoreFrom extends React.Component {
     let displayedProducts = this.state.products.slice(0, 8);
     return (
       <div id="moreFrom">
-        {/* {console.log('shopinfo', this.state.shopInfo)} */}
-        {/* {console.log('products', displayedProducts)} */}
         <div id="content-container">
           <ShopDisplay shopInfo={this.state}/>
           <div className="products-container">
-            {displayedProducts.map((product) => {
-              return <ProductCard
-                key={product.id}
-                product={product}
-              />;
-            }
-            )}
+            <div className="products-inner">
+              {displayedProducts.map((product) => {
+                return <ProductCard
+                  key={product.id}
+                  product={product}
+                />;
+              }
+              )}
+            </div>
           </div>
         </div>
       </div>
