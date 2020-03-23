@@ -1,6 +1,5 @@
 const faker = require('faker');
 const Sequelize = require('sequelize');
-// const connection = require('./db');
 
 const connection = new Sequelize('etsymary', 'root', 'mikamaus', {
   host: 'localhost',
@@ -9,6 +8,7 @@ const connection = new Sequelize('etsymary', 'root', 'mikamaus', {
     timestamps: false
   }
 });
+
 connection
   .authenticate()
   .then(function(err) {
@@ -16,7 +16,6 @@ connection
   }, function (err) {
     console.log('Unable to connect to the database:', err);
   });
-
 
 
 
@@ -55,7 +54,7 @@ connection.sync({force: true})
     }
   })
   .then(function() {
-  //creates 50 products
+  //creates 50 products, then another 50 with the same images
     for (var p = 1; p <= 50; p++) {
       Product.create({
         productName: faker.commerce.product(),

@@ -17,20 +17,5 @@ con.connect(function(err) {
   con.query('USE etsymary');
 });
 
-// const connection = new Sequelize('etsymary', 'root', 'mikamaus', {
-//   host: 'localhost',
-//   dialect: 'mysql',
-//   define: {
-//     timestamps: false
-//   }
-// });
-// connection
-//   .authenticate()
-//   .then(function(err) {
-//     console.log('Connection has been established successfully.');
-//   }, function (err) {
-//     console.log('Unable to connect to the database:', err);
-//   });
 
 module.exports = con;
-// module.exports = connection;

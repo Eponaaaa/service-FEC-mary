@@ -1,0 +1,171 @@
+
+/* Content Container */
+#moreFrom {
+  display: block;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+#moreFrom #content-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  max-width: 1400px;
+  padding: 24px 30px 48px 30px;
+  margin: 0px, 59px, 36px, 59px;
+  position: relative;
+}
+
+
+/* ShopInfo Container */
+
+#moreFrom .shop-container {
+  display: block;
+  flex-grow: 1;
+  flex-shrink: 1;
+  margin-right: 18px;
+  min-width: 28%;
+  /* float: left; */
+}
+
+.shop-actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+#moreFrom .shop-static {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.shop-static-data {
+  display: block;
+  flex-basis: 100%;
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+#moreFrom .shop-static div {
+  display: block;
+  box-sizing: border-box;
+  margin: 0px 24px 18px 0px;
+}
+
+#moreFrom #shop-icon-placeholder img {
+  display: block;
+  box-sizing: border-box;
+  flex-grow: 1;
+  flex-basis: 50%;
+  max-width: 50%;
+  border-radius: 10%;
+  padding: 9px;
+  cursor: pointer;
+}
+
+#moreFrom .shop-static-data {
+  display: block;
+  max-width: 100%;
+  padding: 9px;
+  box-sizing: border-box;
+  flex-basis: 100%;
+  flex-grow: 1;
+}
+
+#moreFrom .shop-data-sm {
+  display: block;
+  font-size: 9px;
+}
+
+#moreFrom .shop-name:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+#moreFrom .shop-data-xlg {
+  font-size: 32px;
+  font-weight: 300;
+  min-width: 100%;
+  display: block;
+}
+
+#moreFrom .shop-data-sm {
+  font-size: 13px;
+  font-weight: 300;
+}
+
+#moreFrom .shop-data-lg {
+  font-size: 26px;
+  font-weight: 300;
+}
+
+#moreFrom .shop-data-sm-bold {
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  text-decoration-style: solid;
+}
+
+#shop-location {
+  flex-basis: 100%;
+  display: block;
+}
+
+
+/* Product Container */
+
+#moreFrom .products-container {
+  flex-grow: 3;
+  flex-shrink: 1;
+  max-width: 100%;
+  display: block;
+  padding: 24px, 30px, 49px, 30px;
+  /* max-height: 50% */
+}
+
+#moreFrom .products-inner {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  margin: -9px;
+}
+
+/* Product Card */
+
+#moreFrom .product-card:hover {
+  background: white;
+  border-radius: 5%;
+  cursor: pointer;
+}
+
+#moreFrom .product-card {
+  box-sizing: border-box;
+  flex-basis: 25%;
+  display: block;
+  flex-grow: 1;
+  max-width: 25%;
+  padding: 9px;
+  position: relative;
+  margin-bottom: 12px;
+}
+
+#moreFrom .product-image img {
+  max-width: 100%;
+  object-fit: cover;
+  display: block;
+  padding-bottom: 9px;
+}
+
+#moreFrom .product-card p {
+  margin: 0px;
+  padding: 0px;
+}
+
+#moreFrom .shop-text-price {
+  font-size: 20px;
+  font-weight: 700;
+}
