@@ -6,6 +6,7 @@ module.exports = {
     path: path.resolve(__dirname, './public'),
     filename: 'bundle.js'
   },
+  resolve: {extensions: ['.js', '.jsx']},
   mode: 'development',
   module: {
     rules: [
@@ -18,6 +19,10 @@ module.exports = {
             presets: ['@babel/preset-env']
           }
         }
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
       }
     ]
   }
