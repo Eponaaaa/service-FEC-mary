@@ -29,7 +29,7 @@ II. To start Express server:
 - in the root directory type "npm run start"
 
 III. If you need to make changes to the React files:
-- in the root directory type "npm run build" then "npm run watch" to have babel compile the files as they change
+- in the root directory type "npm run build" then "npm run watch" to have babel compile the files as they change.
 
 
 
