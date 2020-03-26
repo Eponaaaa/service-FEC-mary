@@ -5,6 +5,6 @@ import '../public/styles.css';
 
 const { productId } = window;
 ReactDOM.render(
-  <MoreFrom productId={productId} />,
+  <MoreFrom productId={productId || 1} />,
   document.getElementById('app4')
 );
