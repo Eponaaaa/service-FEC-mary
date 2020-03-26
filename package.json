@@ -8,8 +8,13 @@
     "node": ">=6.13.0"
   },
   "jest": {
-    "moduleFileExtensions": ["js", "jsx"],
-    "moduleDirectories": ["node_modules"]
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ]
   },
   "scripts": {
     "build": "webpack --config webpack.config.js",
@@ -22,6 +27,7 @@
   },
   "dependencies": {
     "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "faker": "^4.1.0",
     "jquery": "^3.4.1",
@@ -31,6 +37,7 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "sequelize": "^5.21.5",
+    "style-loader": "^1.1.3",
     "webpack": "^4.42.0"
   },
   "devDependencies": {
@@ -39,6 +46,7 @@
     "@babel/preset-react": "^7.8.3",
     "babel-jest": "^25.1.0",
     "babel-loader": "^8.0.6",
+    "css-loader": "^3.4.2",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^6.8.0",

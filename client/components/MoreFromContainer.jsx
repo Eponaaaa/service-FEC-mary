@@ -7,19 +7,21 @@ class MoreFrom extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      currentProduct: 1,
       shopInfo: {},
       products: []
     };
   }
+
 
   componentDidMount () {
     this.getInfo();
   }
 
   getInfo () {
+    // console.log('this is productId', this.props.productId);
+
     $.ajax({
-      url: `/listing/${this.state.currentProduct}`,
+      url: `http://localhost:3004/listing/${this.props.productId}`,
       method: 'GET',
       success: (data) => {
         this.setState({
