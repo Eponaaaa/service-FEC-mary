@@ -18,6 +18,20 @@
 ## Usage
 
 > Some usage instructions
+After installing dependencies:
+I. Setting up the database
+- navigate to the server/database folder
+- in db.js file change username and password to your prefered mySql config
+- in seed.js file change username and password to match your db.js file
+- in the root directory type "npm run db:seed" to seed your database
+
+II. To start Express server:
+- in the root directory type "npm run start"
+
+III. If you need to make changes to the React files:
+- in the root directory type "npm run build" then "npm run watch" to have babel compile the files as they change.
+
+
 
 ## Requirements
 

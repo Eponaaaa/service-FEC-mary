@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname + '/../public')));
 
-const port = 4000;
+const port = 3004;
 
 app.get('/listing/:productId', (req, res) => {
   const qString = `SELECT shopId FROM products WHERE id=
@@ -34,5 +34,5 @@ app.get('/listing/:productId', (req, res) => {
 
 
 app.listen(port, () => {
-  console.log(`listening on port ${port}!`);
+  console.log(`MoreFrom service listening on port ${port}!`);
 });
