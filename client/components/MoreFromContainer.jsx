@@ -19,7 +19,7 @@ class MoreFrom extends React.Component {
 
   getInfo () {
     $.ajax({
-      url: `/listing/${this.state.currentProduct}`,
+      url: `http://localhost:3004/listing/${this.state.currentProduct}`,
       method: 'GET',
       success: (data) => {
         this.setState({

@@ -1,10 +1,12 @@
 const express = require('express');
 const path = require('path');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const db = require('./database/db');
 
 const app = express();
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname + '/../public')));
@@ -16,15 +18,18 @@ app.get('/listing/:productId', (req, res) => {
   ${req.params.productId}`;
   db.query(qString, (err, shopId) => {
     if (err) {
-      console.log('Error getting shopId', err);
+      console.error('Error getting shopId', err);
+      res.sendStatus(500, 'try again later');
     }
     return db.query(`SELECT * FROM shops WHERE id=${shopId[0].shopId}`, (err, shopInfo) => {
       if (err) {
-        console.log('error getting shop info', err);
+        console.error('error getting shop info', err);
+        res.sendStatus(500, 'try again later');
       }
       return db.query(`SELECT * FROM products WHERE shopid=${shopId[0].shopId}`, (err, otherProducts) => {
         if (err) {
-          console.log('error getting other products', err);
+          console.error('error getting other products', err);
+          res.sendStatus(500, 'try again later');
         }
         res.send({shopInfo, otherProducts});
       });
