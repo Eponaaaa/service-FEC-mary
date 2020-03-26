@@ -125,7 +125,6 @@
   max-width: 100%;
   display: block;
   padding: 24px, 30px, 49px, 30px;
-  /* max-height: 50% */
 }
 
 #moreFrom .products-inner {
@@ -154,10 +153,12 @@
   margin-bottom: 12px;
 }
 
-#moreFrom .product-image img {
-  max-width: 100%;
+#moreFrom img {
+  max-width: 234px;
+  max-height: 234px;
   object-fit: cover;
   display: block;
+
   padding-bottom: 9px;
 }
 
