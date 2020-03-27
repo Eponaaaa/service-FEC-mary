@@ -16,7 +16,7 @@ const port = 3004;
 app.get('/listing/:productId', (req, res) => {
   const qString = `SELECT shopId FROM products WHERE id=
   ${req.params.productId}`;
-  console.log('req params in service proxy', req.params.productId);
+  // console.log('req params in service proxy', req.params.productId);
   db.query(qString, (err, shopId) => {
     if (err) {
       console.error('Error getting shopId', err);
