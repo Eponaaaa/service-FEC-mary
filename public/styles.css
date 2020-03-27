@@ -3,6 +3,7 @@
 #moreFrom {
   display: block;
   font-size: 14px;
+  font-family: Arial, "Times New Roman";
   box-sizing: border-box;
   background-color: rgb(255, 236, 236);
 }
@@ -28,7 +29,7 @@
   min-width: 26%;
 }
 
-.shop-actions {
+#moreFrom .shop-actions {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
@@ -85,6 +86,18 @@
   text-decoration: underline;
   cursor: pointer;
 }
+
+@keyframes example {
+  0%   {margin-left: 0px;}
+  100% {margin-left: 4px;}
+}
+
+#moreFrom #arrow:hover {
+  margin-left: 4px;
+  animation-name: example;
+  animation-duration: .5s;
+}
+
 #moreFrom .shop-data-xlg {
   font-size: 32px;
   font-weight: 300;
@@ -111,7 +124,7 @@
   text-decoration-style: solid;
 }
 
-#shop-location {
+#moreFrom #shop-location {
   flex-basis: 100%;
   display: block;
 }
@@ -155,14 +168,14 @@
 }
 
 #moreFrom .product-image {
-  display: block;
+  overflow: hidden;
 }
 
 #moreFrom .product-image img {
   box-sizing: border-box;
   width: 100%;
+  max-height: 250px;
   object-fit: cover;
-  display: block;
   padding-bottom: 9px;
 }
 

@@ -11,7 +11,7 @@ const ShopDisplay = ({shopInfo}) => {
         <div className="shop-static-data">
           <p className="shop-text-sm">More from</p>
           <h2 className="shop-data-xlg shop-name">{shopInfo.shopInfo.shopName}</h2>
-          <p className="shop-data-sm-bold">{`See all ${shopInfo.products.length} items ->`}</p></div>
+          <p className="shop-data-sm-bold">{`See all ${shopInfo.products.length} items`} <span id="arrow">→</span></p></div>
       </div>
       <div className="shop-static">
         <div id="shop-sales">
