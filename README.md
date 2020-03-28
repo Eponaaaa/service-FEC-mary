@@ -1,14 +1,13 @@
-# Project Name
+# Project Name: More From Service
 
-> Project description
+> Creating a service that uses a product number to fetch the matching shop data and display additional product items. Useful for e-commerce applications.
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-
+  - Service: Photo Carousel https://github.com/Eponaaaa/fec-service-michael
+  - Service: Item Details https://github.com/Eponaaaa/service-Ashby
+  - Service: Reviews https://github.com/Eponaaaa/service-Epona-melvin
+  - Proxy: https://github.com/Eponaaaa/proxy-FEC-mary
 ## Table of Contents
 
 1. [Usage](#Usage)
@@ -18,18 +17,25 @@
 ## Usage
 
 > Some usage instructions
-After installing dependencies:
+
+Make sure to run "npm install"
 I. Setting up the database
-- navigate to the server/database folder
-- in db.js file change username and password to your prefered mySql config
-- in seed.js file change username and password to match your db.js file
-- in the root directory type "npm run db:seed" to seed your database
+- open the server folder and open the database folder
+- in the db.js file change username and password to your mysql configuration
+- in the seed.js file change username and password to match your db.js file
+- from your terminal, navigate to the root directory and type "npm run db:create" to create the database
+- then type "npm run db:seed" to seed the database with data
 
-II. To start Express server:
-- in the root directory type "npm run start"
+II. Use webpack to bundle files
+- from the root director type "npm run build"
 
-III. If you need to make changes to the React files:
-- in the root directory type "npm run build" then "npm run watch" to have babel compile the files as they change.
+III. To start Express server:
+- from the root directory type "npm run start"
+- if you need to adjust the the port the server is running on do so in the server.js file found in the server folder
+
+VI. Enjoy yourself!
+- if you want to make changes to the database data you can do so in the seed.js file
+- if making changes to the React components, use "npm run watch" for webpack to compile your files as you change them
 
 
 
