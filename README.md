@@ -1,6 +1,13 @@
-# Project Name: More From Service
+# Microservice: Shop Information
 
-> Creating a service that uses a product number to fetch the matching shop data and display additional product items. Useful for e-commerce applications.
+> This "Shop Information" module is a fullstack application that is meant to integrate with 3 other services to display various information based on a queried item. The "Shop Information" module extracts the itemId from the browser's address bar and queries the database for the information about the shop. The front end displays shop informations such as seller name and establishment as well as other items sold by the same seller.
+
+## Technology Used and Challenges
+Frontend: JavaScript, React.js, HTML, CSS, Jest/Enzyme, Webpack
+Backend: Node.js, Express, MySql, Sequelize
+
+This application was developed from the ground up but I knew it would be based on React.js and Node.js.
+The first decision I had to make is what type of database to use. While I like to use MongoDB for it's flexibility, I choose to use MySql because I know I wanted to minimize writing and editing to the databse. I created two tables, one that stores information for an item, one that stores shop information. Each entry for an item would use the shopId from the shop table as a foreign key. This way one product could be deleted when sold or edit without having to modify the shop table as well. I used sequilze to make interfacing with the database cleaner and more readable. 
 
 ## Related Projects
 
@@ -16,7 +23,7 @@
 
 ## Usage
 
-> Some usage instructions
+> Running the code locally for development
 
 Make sure to run "npm install"
 I. Setting up the database
